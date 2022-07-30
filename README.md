@@ -1,25 +1,51 @@
-# Django-blog - A basic Blog application using Django web framework
- 
+# ✨ Django-blog
+Basic blog application using Django web framework.
 
 
 
-## Installation
- - `git clone https://github.com/superuser118/django-blog.git`
- - `cd django-blog`
- 
- 
-Make sure to activate your virtual environment.
+### 👉 Start here.
+> Download the code 
+ ```bash
+$ # Get the code
+$ git clone https://github.com/superuser118/django-blog.git
+$ cd django-blog
+```
 
-- py -m pip install -U -r requirements.txt
+### 👉 Install modules to your virtual environment  
 
-For Windows
-- `py -m venv .venv`
-- `.venv\scripts\activate`
-- `py manage.py makemigrations`
-- `py manage.py migrate`
-- `py manage.py createsuperuser`
 
-- Go to http://127.0.0.1:8000
-- [Admin] http://127.0.0.1:8000/admin/
 
-## Thanks!
+For `Unix`, `MacOS` 
+
+
+```bash
+$ virtualenv env
+$ source env/bin/activate
+$ pip3 install -r requirements.txt
+```
+
+For `Windows`, `MacOS` 
+```
+$ py -m venv .venv
+$ .venv\Scripts\activate
+$ py -m pip install -r requirements.txt
+```
+<br />
+
+### 👉 Set Up Database
+
+```bash
+$ py manage.py makemigrations
+$ py manage.py migrate
+```
+
+### 👉 Start the app
+
+```bash
+$ python manage.py runserver
+```
+
+Finally, the app runs at `http://127.0.0.1:8000/`. 
+
+---
+Thanks!
