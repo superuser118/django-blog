@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="col-lg">
+{% if tag %}
+<p class="display-6 mb-lg-0">{{ tag.name }}</p>
+{% endif %}
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for post in posts %}
+    <div class="col">
+        <div class="card h-100">
+            <img src="{{ post.image.url }}" class="card-img-top" alt="{{post.title}}">
+            <div class="card-body">
+                <h5 class=" mb-3">{{ post.title }}</h5>
+                <p>{{ post.body|safe|striptags|truncatechars:100 }}
+                    <a href="{{ post.get_absolute_url }}" class="text-decoration-none"> Read more</a>
+                </p>
+               
+                
+                    
+            </div>
+            <div class="card-footer">
+                <small>
+                    Published {{ post.whenpublished }} by <strong>{{ post.author }}</strong>
+                </small>
+            </div>
+                
+        </div>
+     
+    </div>
+{% endfor %}
+</div>
+{% include "pagination.html" with page=posts %}
+    {% endblock content %}
+
+
+
+
+
+
+
+
+

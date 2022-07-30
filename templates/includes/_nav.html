@@ -1,0 +1,55 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<nav class="navbar navbar-expand-lg bg-light text-dark rounded fixed-top">
+    <div class="container-xl">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+       <a class="navbar-brand" href="/"> blog | </a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Latest</a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Topics
+                    </a>
+
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item {% if request.path == '/tag/Technology/' %}active{% endif %}"
+                                href="{{ request.scheme }}://{{ request.get_host }}/tag/technology/">Technology</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {% if request.path == '/tag/Facts/' %}active{% endif %}"
+                                href="{{ request.scheme }}://{{ request.get_host }}/tag/facts/">Facts</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {% if request.path == '/tag/Beta/' %}active{% endif %}"
+                                href="{{ request.scheme }}://{{ request.get_host }}/tag/beta/">Beta</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <form class="d-flex" action="/">
+                <input class="form-control mr-0" type="search" value="{{request.GET.q}}" name="q" placeholder="Search"
+                    aria-label="Search">
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+</nav>
