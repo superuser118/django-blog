@@ -1,4 +1,4 @@
-# django-blog - A basic Blog application using Django web framework
+# Django-blog - A basic Blog application using Django web framework
  
 
 
