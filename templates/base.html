@@ -7,12 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.css' %}">
 
   <link rel="stylesheet" href="{% static 'vendor/fontawesome/css/all.css' %}">
   <link rel="stylesheet" href="{% static 'css/night.css' %}">
@@ -25,21 +25,21 @@
     {% include 'includes/_nav.html'%}
   </header>
 
-  <main >
+  <main>
     <div class="container-lg">
       <div class="row">
         <div class="col-lg">
-    <p class="display-6 my-3">
-      {% if request.GET.q is not null %}
-      Search Results for "{{ request.GET.q }}"
-      {% endif %}
-    </p>
-    {% block content %} {% endblock content %}
+          <p class="display-6 my-3">
+            {% if request.GET.q is not null %}
+            Search Results for "{{ request.GET.q }}"
+            {% endif %}
+          </p>
+          {% block content %} {% endblock content %}
   </main>
-{% include 'includes/_footer.html'%}
-{%block scripts%}
-{% include 'includes/_scripts.html'%}
-{% endblock scripts%}
+  {% include 'includes/_footer.html'%}
+  {%block scripts%}
+  {% include 'includes/_scripts.html'%}
+  {% endblock scripts%}
 
 
 </body>
